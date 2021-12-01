@@ -3,6 +3,7 @@
 pragma solidity 0.8.10; // Last version
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+
 /**
  * @title Voting
  * Date: 16-11-2021
