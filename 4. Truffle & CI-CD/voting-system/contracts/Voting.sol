@@ -43,8 +43,8 @@ contract Voting is Ownable {
         VotesTallied
     }
    
-    WorkflowStatus status = WorkflowStatus.RegisteringVoters;
-   
+    WorkflowStatus public status = WorkflowStatus.RegisteringVoters;
+    
     uint public winningProposalId; // id of the winning proposal
    
     mapping(address => Voter) public voters; // list of authorized persons
@@ -67,7 +67,7 @@ contract Voting is Ownable {
      */
     function registerVoters(address _voterAddress) public onlyOwner {
         require(status == WorkflowStatus.RegisteringVoters);
-        require(!voters[_voterAddress].hasVoted, "This address is already registered !");
+        require(!voters[_voterAddress].isRegistered, "This address is already registered !");
        
         voters[_voterAddress].isRegistered = true;
        
